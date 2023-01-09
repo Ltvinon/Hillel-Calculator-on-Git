@@ -14,5 +14,13 @@
             }
             return false;
         }
+        static private bool IsOper(char c)
+        {
+            if ("+-/*()".IndexOf(c) != -1)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

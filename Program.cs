@@ -4,7 +4,18 @@
     {
         static void Main(string[] args)
         {
-            
+            while (true)
+            {
+                Console.WriteLine($"Введіть приклад : ");
+
+                string str = Console.ReadLine();
+                str = str.Replace(".", ",");
+                string temp = ToPoland(str);
+                double result = Count(temp);
+
+                Console.WriteLine("Результат : " + result);
+
+            }
         }
         static private string ToPoland(string input)
         {

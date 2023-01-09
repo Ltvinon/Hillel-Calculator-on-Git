@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            
+        }
+        static private bool IsDelim(char c)
+        {
+            if (" =".IndexOf(c) != -1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

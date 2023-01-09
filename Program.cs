@@ -32,6 +32,34 @@
                     output += " ";
                     i--;
                 }
+                else if (IsOper(input[i]))
+                {
+                    if (input[i] == '(')
+                    {
+                        opers.Push(input[i]);
+                    }
+                    else if (input[i] == ')')
+                    {
+                        char c = opers.Pop();
+
+                        while (c != '(')
+                        {
+                            output += c.ToString() + ' ';
+                            c = opers.Pop();
+                        }
+                    }
+                    else
+                    {
+                        if (opers.Count > 0)
+                        {
+                            if (GetPriurity(input[i]) <= GetPriurity(opers.Peek()))
+                            {
+                                output += opers.Pop().ToString() + " ";
+                            }
+                        }
+                        opers.Push(char.Parse(input[i].ToString()));
+                    }
+                }
             }
             while (opers.Count > 0)
             {

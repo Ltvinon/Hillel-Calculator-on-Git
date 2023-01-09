@@ -1,9 +1,12 @@
-﻿namespace Hillel_Calculator_on_Git
+﻿using System.Text;
+
+namespace Hillel_Calculator_on_Git
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = UTF8Encoding.UTF8;
             while (true)
             {
                 Console.WriteLine($"Введіть приклад : ");

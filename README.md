@@ -1,1 +1,2 @@
-# Hillel Calculator on Git
+Hillel Calculator on Git 
+HW №2

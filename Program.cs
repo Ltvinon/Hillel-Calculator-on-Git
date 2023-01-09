@@ -67,6 +67,54 @@
             }
             return output;
         }
+        static private double Count(string input)
+        {
+            double result = 0;
+            Stack<double> temp = new Stack<double>();
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (Char.IsDigit(input[i]))
+                {
+                    string first = string.Empty;
+                    while (!IsDelim(input[i]) && !IsOper(input[i]))
+                    {
+                        first += input[i];
+                        i++;
+                        if (i == input.Length)
+                        {
+                            break;
+                        }
+                    }
+                    temp.Push(double.Parse(first));
+                    i--;
+                }
+                else if (IsOper(input[i]))
+                {
+                    double second = temp.Pop();
+                    double first = temp.Pop();
+
+                    switch (input[i])
+                    {
+                        case '+':
+                            result = first + second;
+                            break;
+                        case '-':
+                            result = first - second;
+                            break;
+                        case '*':
+                            result = first * second;
+                            break;
+                        case '/':
+                            result = first / second;
+                            break;
+                    }
+                    temp.Push(result);
+                }
+            }
+            return temp.Peek();
+
+        }
         static private bool IsDelim(char c)
         {
             if (" =".IndexOf(c) != -1)

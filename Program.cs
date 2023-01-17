@@ -8,19 +8,23 @@ namespace Hillel_Calculator_on_Git
         static void Main(string[] args)
         {
             Console.OutputEncoding = UTF8Encoding.UTF8;
+            Program program = new Program();
             while (true)
             {
-                Program program = new Program();
-                Console.WriteLine($"Введіть приклад : ");
-
-                string str = Console.ReadLine();
-                str = str.Replace(".", ",");
-                string temp = program.ToPoland(str);
-                double result = program.Count(temp);
-
-                Console.WriteLine("Результат : " + result);
+                program.Calculate();
 
             }
+        }
+        public void Calculate()
+        {
+            Console.WriteLine($"Введіть приклад : ");
+
+            string str = Console.ReadLine();
+            str = str.Replace(".", ",");
+            string temp = ToPoland(str);
+            double result = Count(temp);
+
+            Console.WriteLine("Результат : " + result);
         }
          public string ToPoland(string input)
         {

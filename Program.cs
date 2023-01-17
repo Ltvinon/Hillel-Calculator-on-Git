@@ -2,25 +2,27 @@
 
 namespace Hillel_Calculator_on_Git
 {
-    internal class Program
+    public class Program
     {
+        
         static void Main(string[] args)
         {
             Console.OutputEncoding = UTF8Encoding.UTF8;
             while (true)
             {
+                Program program = new Program();
                 Console.WriteLine($"Введіть приклад : ");
 
                 string str = Console.ReadLine();
                 str = str.Replace(".", ",");
-                string temp = ToPoland(str);
-                double result = Count(temp);
+                string temp = program.ToPoland(str);
+                double result = program.Count(temp);
 
                 Console.WriteLine("Результат : " + result);
 
             }
         }
-        static private string ToPoland(string input)
+         public string ToPoland(string input)
         {
             string output = string.Empty;
             Stack<char> opers = new Stack<char>();
@@ -81,7 +83,7 @@ namespace Hillel_Calculator_on_Git
             }
             return output;
         }
-        static private double Count(string input)
+        public double Count(string input)
         {
             double result = 0;
             Stack<double> temp = new Stack<double>();
@@ -129,7 +131,7 @@ namespace Hillel_Calculator_on_Git
             return temp.Peek();
 
         }
-        static private bool IsDelim(char c)
+         public bool IsDelim(char c)
         {
             if (" =".IndexOf(c) != -1)
             {
@@ -137,7 +139,7 @@ namespace Hillel_Calculator_on_Git
             }
             return false;
         }
-        static private bool IsOper(char c)
+         public bool IsOper(char c)
         {
             if ("+-/*()".IndexOf(c) != -1)
             {
@@ -145,7 +147,7 @@ namespace Hillel_Calculator_on_Git
             }
             return false;
         }
-        static private int GetPriurity(char c)
+         public int GetPriurity(char c)
         {
             switch (c)
             {

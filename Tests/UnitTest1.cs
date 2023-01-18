@@ -1,4 +1,5 @@
-using Hillel_Calculator_on_Git;
+﻿using Hillel_Calculator_on_Git;
+using Microsoft.VisualStudio.TestPlatform.CoreUtilities.Extensions;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Program = Hillel_Calculator_on_Git.Program;
 
@@ -41,7 +42,7 @@ namespace Tests
 
         [TestMethod]
         [DataRow("(9 + 3) * (8 / ( 1 + 3))+2,1", "9 3 + 8 1 3 + / * 2,1 + ")]
-        public void TesToPoland(string str, string result)
+        public void TestToPoland(string str, string result)
         {
             Program program = new Program();
             var current = program.ToPoland(str);
@@ -50,12 +51,24 @@ namespace Tests
 
         [TestMethod]
         [DataRow("9 3 + 8 1 3 + / * 2,1 + ", 26.1)]
-        public void TesCount(string str, double result)
+        public void TestCount(string str, double result)
         {
             Program program = new Program();
             var current = program.Count(str);
             Assert.AreEqual(result, current);
         }
+
+        [TestMethod]
+        public void TestZero()
+        {
+            Program program = new Program();
+            var expected = double.Parse("∞");
+            var temp = program.ToPoland("24 / 0");
+            var current = program.Count(temp);
+            
+            Assert.AreEqual(expected, current);
+        }
+
 
     }
 }

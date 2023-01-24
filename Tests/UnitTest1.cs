@@ -50,12 +50,11 @@ namespace Tests
         }
 
         [TestMethod]
-        [DataRow("(9 + 3) * (8 / ( 1 + 3))+2,1", 26.1)]
+        [DataRow("9 3 + 8 1 3 + / *  ", 24)]
         public void TestCount(string str, double result)
         {
             Program program = new Program();
-            var temp = program.ToPoland(str);
-            var current = program.Count(temp);
+            var current = program.Count(str);
             Assert.AreEqual(result, current);
         }
 
@@ -63,7 +62,7 @@ namespace Tests
         public void TestZero()
         {
             Program program = new Program();
-            var expected = double.Parse(String.Format("∞"));
+            var expected = double.PositiveInfinity;
             var temp = program.ToPoland("24 / 0");
             var current = program.Count(temp);
             

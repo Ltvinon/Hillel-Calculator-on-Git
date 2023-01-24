@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Litvinov\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Hillel Calculator on Git\\Hillel Calculator on Git.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\Hillel-Calculator-on-Git\\Hillel Calculator on Git.csproj",
       "projectName": "Hillel Calculator on Git",
-      "projectPath": "D:\\Projects\\Hillel Calculator on Git\\Hillel Calculator on Git.csproj",
-      "packagesPath": "C:\\Users\\Litvinov\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Hillel Calculator on Git\\obj\\",
+      "projectPath": "C:\\Users\\User\\Documents\\Hillel-Calculator-on-Git\\Hillel Calculator on Git.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Documents\\Hillel-Calculator-on-Git\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Litvinov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
